@@ -1,5 +1,4 @@
-//
-//  ViewController.swift
+//  PreparationViewController.swift
 //  PhotoPrax
 //
 //  Created by Elmer Cat on 11/26/25.
@@ -7,7 +6,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class PreparationViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,4 +22,3 @@ class ViewController: NSViewController {
 
 
 }
-
