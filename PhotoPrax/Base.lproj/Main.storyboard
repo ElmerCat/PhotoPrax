@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24412"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PhotoPrax" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,8 +684,8 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -700,14 +701,87 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Preparation View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="PreparationViewController" customModule="PhotoPrax" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y0Z-j6-2ng">
+                                <rect key="frame" x="152" y="179" width="176" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="Eay-IS-QQL"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="PhotoPrax" id="wXs-SH-Kwg">
+                                    <font key="font" size="48" name="BrushScriptMT"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ddK-ok-kSq">
+                                <rect key="frame" x="20" y="20" width="116" height="24"/>
+                                <buttonCell key="cell" type="push" title="Quit PhotoPrax" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Oil-Bg-ciB">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="terminate:" target="rPt-NT-nkU" id="QaG-8A-JOr"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="axQ-fU-hWB">
+                                <rect key="frame" x="381" y="20" width="79" height="24"/>
+                                <buttonCell key="cell" type="push" title="Continue" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PmW-74-Y8R">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                            </button>
+                            <progressIndicator maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="dQ9-IT-ett">
+                                <rect key="frame" x="341" y="16" width="32" height="32"/>
+                            </progressIndicator>
+                            <progressIndicator wantsLayer="YES" maxValue="100" doubleValue="50" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="v0l-G6-ih1">
+                                <rect key="frame" x="20" y="78" width="440" height="21"/>
+                            </progressIndicator>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fa7-bp-d2X">
+                                <rect key="frame" x="18" y="128" width="444" height="15"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Accessing Photos Library" id="TCC-gg-nxB">
+                                    <font key="font" size="13" name="SFMono-LightItalic"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="y0Z-j6-2ng" firstAttribute="centerX" secondItem="v0l-G6-ih1" secondAttribute="centerX" id="4DH-la-rlj"/>
+                            <constraint firstItem="y0Z-j6-2ng" firstAttribute="centerX" secondItem="Fa7-bp-d2X" secondAttribute="centerX" id="AEU-QS-fMP"/>
+                            <constraint firstItem="y0Z-j6-2ng" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="AXu-yI-JpB"/>
+                            <constraint firstItem="axQ-fU-hWB" firstAttribute="leading" secondItem="dQ9-IT-ett" secondAttribute="trailing" constant="8" symbolic="YES" id="AyG-2K-Rcg"/>
+                            <constraint firstItem="Fa7-bp-d2X" firstAttribute="top" secondItem="y0Z-j6-2ng" secondAttribute="bottom" constant="36" id="Bfa-t6-O9z"/>
+                            <constraint firstItem="v0l-G6-ih1" firstAttribute="leading" secondItem="ddK-ok-kSq" secondAttribute="leading" id="Czs-iC-6Cf"/>
+                            <constraint firstItem="v0l-G6-ih1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="Fyu-0D-oB0"/>
+                            <constraint firstItem="dQ9-IT-ett" firstAttribute="top" secondItem="v0l-G6-ih1" secondAttribute="bottom" constant="30" id="Mcg-xf-VN9"/>
+                            <constraint firstItem="v0l-G6-ih1" firstAttribute="leading" secondItem="Fa7-bp-d2X" secondAttribute="leading" id="VqW-IS-4uj"/>
+                            <constraint firstItem="ddK-ok-kSq" firstAttribute="baseline" secondItem="axQ-fU-hWB" secondAttribute="baseline" id="YaH-wO-gqP"/>
+                            <constraint firstItem="dQ9-IT-ett" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ddK-ok-kSq" secondAttribute="trailing" constant="8" symbolic="YES" id="Zbb-ah-Num"/>
+                            <constraint firstItem="ddK-ok-kSq" firstAttribute="centerY" secondItem="dQ9-IT-ett" secondAttribute="centerY" id="gjY-2m-9YL"/>
+                            <constraint firstItem="y0Z-j6-2ng" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="hrx-ry-BId"/>
+                            <constraint firstAttribute="trailing" secondItem="dQ9-IT-ett" secondAttribute="trailing" constant="107" id="ifF-tv-810"/>
+                            <constraint firstItem="v0l-G6-ih1" firstAttribute="trailing" secondItem="axQ-fU-hWB" secondAttribute="trailing" id="nd5-dn-GEv"/>
+                            <constraint firstAttribute="bottom" secondItem="ddK-ok-kSq" secondAttribute="bottom" constant="20" symbolic="YES" id="qB6-m6-f3v"/>
+                            <constraint firstItem="v0l-G6-ih1" firstAttribute="top" secondItem="Fa7-bp-d2X" secondAttribute="bottom" constant="29" id="usd-OB-JuV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="progressIndicator" destination="v0l-G6-ih1" id="5m4-Zh-Hn2"/>
+                        <outlet property="statusLabel" destination="Fa7-bp-d2X" id="aAD-4O-hAh"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

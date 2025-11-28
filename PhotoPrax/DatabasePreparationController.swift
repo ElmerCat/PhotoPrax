@@ -1,9 +1,13 @@
+//  Prax-11272
+//
+//
 //  DatabasePreparationController.swift
 //  PhotoPrax
 //
 //  Handles Photos authorization and database preparation, publishing progress for UI updates.
 
 import Foundation
+import Combine
 import Photos
 
 class DatabasePreparationController: ObservableObject {
