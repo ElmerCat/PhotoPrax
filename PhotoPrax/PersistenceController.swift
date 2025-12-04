@@ -19,7 +19,9 @@ class PersistenceController {
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
+            
         }
+        
     }
     
     // Convenience to access main context
